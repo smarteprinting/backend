@@ -51,7 +51,7 @@ const productSchema = mongoose.Schema({
     },
     wireless: {
         type: String,
-        enum: ['Yes', 'No'],
+        enum: ['Yes', 'No', ''],
     },
     mainFunction: {
         type: [String],
