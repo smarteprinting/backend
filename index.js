@@ -12,6 +12,13 @@ const app = express();
 
 app.use(cors())
 app.use(express.json());
+
+// Ensure DB is connected for serverless environments (Vercel)
+app.use(async (req, res, next) => {
+    await connectDB();
+    next();
+});
+
 app.use('/uploads', express.static('uploads'));
 
 // Routes
